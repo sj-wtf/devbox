@@ -1,0 +1,20 @@
+"*":
+  core:
+    themes: [
+      "one-light-ui"
+      "one-light-syntax"
+    ]
+  editor:
+    fontSize: 9
+    invisibles: {}
+    tabLength: 4
+  "exception-reporting":
+    userId: "08e16d07-c573-6768-1502-af4ff3b97fb8"
+  linter: {}
+  "linter-flake8": {}
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  welcome:
+    showOnStartup: false
+"linter-flake8":
+  executableDir: "/usr/local/bin"

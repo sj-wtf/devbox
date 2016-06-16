@@ -1,0 +1,275 @@
+{
+  "request": "/identity/consumer/696717",
+  "size": 1,
+  "offset": 0,
+  "total": 1,
+  "millis": 10,
+  "requestMethod": "GET",
+  "content": [
+    {
+      "id": 696717,
+      "personInfo": {
+        "fullName": "Clark Lensing",
+        "shortName": "Clark",
+        "collationName": "clark lensing",
+        "givenName": "Clark",
+        "familyName": "Lensing",
+        "primaryLanguage": "en-US",
+        "maritalStatus": "Unknown",
+        "username": "clensing"
+      },
+      "account": {},
+      "emails": [
+        {
+          "emailType": "html",
+          "address": "clensing@redbrickhealth.com",
+          "preferred": true
+        }
+      ],
+      "addresses": [],
+      "applications": [],
+      "connections": [
+        {
+          "id": 1009,
+          "connected": "2014-10-17T17:49:08Z",
+          "enrolled": "2014-10-17T17:49:08Z"
+        },
+        {
+          "id": 1001,
+          "connected": "2016-01-25T18:26:57Z",
+          "enrolled": "2014-10-17T20:03:58Z"
+        },
+        {
+          "id": 1010,
+          "connected": "2015-02-05T21:46:51Z",
+          "enrolled": "2015-02-05T21:33:56Z"
+        }
+      ],
+      "vaults": [
+        {
+          "id": 9,
+          "externalId": "278587",
+          "metadata": {},
+          "vInfo": {
+            "name": "vaultrbhpub",
+            "writable": false,
+            "href": "N/A",
+            "comment": "N/A"
+          }
+        },
+        {
+          "id": 7,
+          "externalId": "69",
+          "token": "XShNNZ6c46DFP2ZL7BlULo35CDTn_fIjUWQ8XaRaDaFrqxFR9vJ-eQWjVU6jMtbOU2W2K-_gpwV4v3ZVhUwxBw",
+          "metadata": {
+            "role:rbhtop/admin": "true",
+            "role:rbhcp/supportanalystrbh": "true",
+            "role:rbhle/dataloader": "true",
+            "role:rbhtop/appdev": "true",
+            "role:rbhcp/dataloader": "true",
+            "role:rbhle/supportanalystrbh": "true",
+            "role:rbhclinical/supervisor": "true",
+            "role:rbhclinical/clinicalresource": "true"
+          },
+          "vInfo": {
+            "name": "vaultrbhcorp",
+            "writable": false,
+            "href": "N/A",
+            "comment": "N/A"
+          }
+        }
+      ],
+      "metafields": {},
+      "organizations": [
+        32479
+      ],
+      "parentOrganizations": [
+        32477,
+        5052
+      ],
+      "phoneNumbers": [],
+      "enabled": true,
+      "rosterData": {},
+      "dateCreated": "2014-08-12T18:08:22Z",
+      "lastUpdated": "2016-04-15T17:58:59Z",
+      "entitlements": [
+        {
+          "sponsor": {
+            "sponsorType": "ecosystem",
+            "sponsorId": 0
+          },
+          "code": "admin",
+          "organizationId": 5052,
+          "eligible": true,
+          "recommended": false,
+          "enrolled": true,
+          "parameters": [
+            {
+              "name": "organization",
+              "value": "5052"
+            }
+          ],
+          "completedParameters": [],
+          "languages": [
+            "en-US"
+          ],
+          "lastUpdated": "2016-04-25T13:08:25Z"
+        },
+        {
+          "sponsor": {
+            "sponsorType": "ecosystem",
+            "sponsorId": 0
+          },
+          "code": "appdev",
+          "organizationId": 5052,
+          "eligible": true,
+          "recommended": false,
+          "enrolled": true,
+          "parameters": [
+            {
+              "name": "organization",
+              "value": "5052"
+            }
+          ],
+          "completedParameters": [],
+          "languages": [
+            "en-US"
+          ],
+          "lastUpdated": "2016-04-25T13:08:25Z"
+        },
+        {
+          "sponsor": {
+            "sponsorType": "ecosystem",
+            "sponsorId": 0
+          },
+          "code": "supportanalystrbh",
+          "organizationId": 5053,
+          "eligible": true,
+          "recommended": false,
+          "enrolled": true,
+          "parameters": [
+            {
+              "name": "organization",
+              "value": "5053"
+            }
+          ],
+          "completedParameters": [],
+          "languages": [
+            "en-US"
+          ],
+          "lastUpdated": "2016-04-25T13:08:25Z"
+        },
+        {
+          "sponsor": {
+            "sponsorType": "ecosystem",
+            "sponsorId": 0
+          },
+          "code": "supportanalystrbh",
+          "organizationId": 5053,
+          "eligible": true,
+          "recommended": false,
+          "enrolled": true,
+          "parameters": [
+            {
+              "name": "organization",
+              "value": "5055"
+            }
+          ],
+          "completedParameters": [],
+          "languages": [
+            "en-US"
+          ],
+          "lastUpdated": "2016-04-25T13:08:25Z"
+        },
+        {
+          "sponsor": {
+            "sponsorType": "ecosystem",
+            "sponsorId": 0
+          },
+          "code": "dataloader",
+          "organizationId": 5053,
+          "eligible": true,
+          "recommended": false,
+          "enrolled": true,
+          "parameters": [
+            {
+              "name": "organization",
+              "value": "5053"
+            }
+          ],
+          "completedParameters": [],
+          "languages": [
+            "en-US"
+          ],
+          "lastUpdated": "2016-04-25T13:08:25Z"
+        },
+        {
+          "sponsor": {
+            "sponsorType": "ecosystem",
+            "sponsorId": 0
+          },
+          "code": "dataloader",
+          "organizationId": 5053,
+          "eligible": true,
+          "recommended": false,
+          "enrolled": true,
+          "parameters": [
+            {
+              "name": "organization",
+              "value": "5055"
+            }
+          ],
+          "completedParameters": [],
+          "languages": [
+            "en-US"
+          ],
+          "lastUpdated": "2016-04-25T13:08:25Z"
+        },
+        {
+          "sponsor": {
+            "sponsorType": "ecosystem",
+            "sponsorId": 0
+          },
+          "code": "supervisor",
+          "organizationId": 32479,
+          "eligible": true,
+          "recommended": false,
+          "enrolled": true,
+          "parameters": [
+            {
+              "name": "organization",
+              "value": "32479"
+            }
+          ],
+          "completedParameters": [],
+          "languages": [
+            "en-US"
+          ],
+          "lastUpdated": "2016-04-25T13:08:25Z"
+        },
+        {
+          "sponsor": {
+            "sponsorType": "ecosystem",
+            "sponsorId": 0
+          },
+          "code": "clinicalresource",
+          "organizationId": 32479,
+          "eligible": true,
+          "recommended": false,
+          "enrolled": true,
+          "parameters": [
+            {
+              "name": "organization",
+              "value": "32479"
+            }
+          ],
+          "completedParameters": [],
+          "languages": [
+            "en-US"
+          ],
+          "lastUpdated": "2016-04-25T13:08:25Z"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+exports.provider = provider;
+exports.suggestionsList = suggestionsList;
+exports.suggestionsShow = suggestionsShow;
+'use babel';
+
+function provider(provider) {
+  var message = undefined;
+  if (!provider || typeof provider !== 'object') {
+    message = 'Invalid provider provided';
+  } else if (!Array.isArray(provider.grammarScopes)) {
+    message = 'Invalid or no grammarScopes found on provider';
+  } else if (typeof provider.getIntentions !== 'function') {
+    message = 'Invalid or no getIntentions found on provider';
+  }
+  if (message) {
+    console.log('[Intentions] Invalid provider', provider);
+    throw new Error(message);
+  }
+}
+
+function suggestionsList(suggestions) {
+  if (Array.isArray(suggestions)) {
+    var suggestionsLength = suggestions.length;
+    for (var i = 0; i < suggestionsLength; ++i) {
+      var suggestion = suggestions[i];
+      var message = undefined;
+      if (typeof suggestion.title !== 'string') {
+        message = 'Invalid or no title found on intention';
+      } else if (typeof suggestion.selected !== 'function') {
+        message = 'Invalid or no selected found on intention';
+      }
+      if (message) {
+        console.log('[Intentions] Invalid suggestion of type list', suggestion);
+        throw new Error(message);
+      }
+    }
+  }
+  return suggestions;
+}
+
+function suggestionsShow(suggestions) {
+  if (Array.isArray(suggestions)) {
+    var suggestionsLength = suggestions.length;
+    for (var i = 0; i < suggestionsLength; ++i) {
+      var suggestion = suggestions[i];
+      var message = undefined;
+      if (typeof suggestion.range !== 'object' || !suggestion.range) {
+        message = 'Invalid or no range found on intention';
+      } else if (suggestion['class'] && typeof suggestion['class'] !== 'string') {
+        message = 'Invalid class found on intention';
+      } else if (typeof suggestion.created !== 'function') {
+        message = 'Invalid or no created found on intention';
+      }
+      if (message) {
+        console.log('[Intentions] Invalid suggestion of type show', suggestion);
+        throw new Error(message);
+      }
+    }
+  }
+  return suggestions;
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9zdGpvaG5zb24vcmVwb3NpdG9yaWVzL2RvdGZpbGVzL2F0b20vcGFja2FnZXMvaW50ZW50aW9ucy9saWIvdmFsaWRhdGUuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUEsV0FBVyxDQUFBOztBQU1KLFNBQVMsUUFBUSxDQUFDLFFBQWtFLEVBQUU7QUFDM0YsTUFBSSxPQUFPLFlBQUEsQ0FBQTtBQUNYLE1BQUksQ0FBQyxRQUFRLElBQUksT0FBTyxRQUFRLEtBQUssUUFBUSxFQUFFO0FBQzdDLFdBQU8sR0FBRywyQkFBMkIsQ0FBQTtHQUN0QyxNQUFNLElBQUksQ0FBQyxLQUFLLENBQUMsT0FBTyxDQUFDLFFBQVEsQ0FBQyxhQUFhLENBQUMsRUFBRTtBQUNqRCxXQUFPLEdBQUcsK0NBQStDLENBQUE7R0FDMUQsTUFBTSxJQUFJLE9BQU8sUUFBUSxDQUFDLGFBQWEsS0FBSyxVQUFVLEVBQUU7QUFDdkQsV0FBTyxHQUFHLCtDQUErQyxDQUFBO0dBQzFEO0FBQ0QsTUFBSSxPQUFPLEVBQUU7QUFDWCxXQUFPLENBQUMsR0FBRyxDQUFDLCtCQUErQixFQUFFLFFBQVEsQ0FBQyxDQUFBO0FBQ3RELFVBQU0sSUFBSSxLQUFLLENBQUMsT0FBTyxDQUFDLENBQUE7R0FDekI7Q0FDRjs7QUFFTSxTQUFTLGVBQWUsQ0FBQyxXQUE4QyxFQUFxQztBQUNqSCxNQUFJLEtBQUssQ0FBQyxPQUFPLENBQUMsV0FBVyxDQUFDLEVBQUU7QUFDOUIsUUFBTSxpQkFBaUIsR0FBRyxXQUFXLENBQUMsTUFBTSxDQUFBO0FBQzVDLFNBQUssSUFBSSxDQUFDLEdBQUcsQ0FBQyxFQUFFLENBQUMsR0FBRyxpQkFBaUIsRUFBRSxFQUFFLENBQUMsRUFBRTtBQUMxQyxVQUFNLFVBQVUsR0FBRyxXQUFXLENBQUMsQ0FBQyxDQUFDLENBQUE7QUFDakMsVUFBSSxPQUFPLFlBQUEsQ0FBQTtBQUNYLFVBQUksT0FBTyxVQUFVLENBQUMsS0FBSyxLQUFLLFFBQVEsRUFBRTtBQUN4QyxlQUFPLEdBQUcsd0NBQXdDLENBQUE7T0FDbkQsTUFBTSxJQUFJLE9BQU8sVUFBVSxDQUFDLFFBQVEsS0FBSyxVQUFVLEVBQUU7QUFDcEQsZUFBTyxHQUFHLDJDQUEyQyxDQUFBO09BQ3REO0FBQ0QsVUFBSSxPQUFPLEVBQUU7QUFDWCxlQUFPLENBQUMsR0FBRyxDQUFDLDhDQUE4QyxFQUFFLFVBQVUsQ0FBQyxDQUFBO0FBQ3ZFLGNBQU0sSUFBSSxLQUFLLENBQUMsT0FBTyxDQUFDLENBQUE7T0FDekI7S0FDRjtHQUNGO0FBQ0QsU0FBTyxXQUFXLENBQUE7Q0FDbkI7O0FBRU0sU0FBUyxlQUFlLENBQUMsV0FBbUQsRUFBMEM7QUFDM0gsTUFBSSxLQUFLLENBQUMsT0FBTyxDQUFDLFdBQVcsQ0FBQyxFQUFFO0FBQzlCLFFBQU0saUJBQWlCLEdBQUcsV0FBVyxDQUFDLE1BQU0sQ0FBQTtBQUM1QyxTQUFLLElBQUksQ0FBQyxHQUFHLENBQUMsRUFBRSxDQUFDLEdBQUcsaUJBQWlCLEVBQUUsRUFBRSxDQUFDLEVBQUU7QUFDMUMsVUFBTSxVQUFVLEdBQUcsV0FBVyxDQUFDLENBQUMsQ0FBQyxDQUFBO0FBQ2pDLFVBQUksT0FBTyxZQUFBLENBQUE7QUFDWCxVQUFJLE9BQU8sVUFBVSxDQUFDLEtBQUssS0FBSyxRQUFRLElBQUksQ0FBQyxVQUFVLENBQUMsS0FBSyxFQUFFO0FBQzdELGVBQU8sR0FBRyx3Q0FBd0MsQ0FBQTtPQUNuRCxNQUFNLElBQUksVUFBVSxTQUFNLElBQUksT0FBTyxVQUFVLFNBQU0sS0FBSyxRQUFRLEVBQUU7QUFDbkUsZUFBTyxHQUFHLGtDQUFrQyxDQUFBO09BQzdDLE1BQU0sSUFBSSxPQUFPLFVBQVUsQ0FBQyxPQUFPLEtBQUssVUFBVSxFQUFFO0FBQ25ELGVBQU8sR0FBRywwQ0FBMEMsQ0FBQTtPQUNyRDtBQUNELFVBQUksT0FBTyxFQUFFO0FBQ1gsZUFBTyxDQUFDLEdBQUcsQ0FBQyw4Q0FBOEMsRUFBRSxVQUFVLENBQUMsQ0FBQTtBQUN2RSxjQUFNLElBQUksS0FBSyxDQUFDLE9BQU8sQ0FBQyxDQUFBO09BQ3pCO0tBQ0Y7R0FDRjtBQUNELFNBQU8sV0FBVyxDQUFBO0NBQ25CIiwiZmlsZSI6Ii9Vc2Vycy9zdGpvaG5zb24vcmVwb3NpdG9yaWVzL2RvdGZpbGVzL2F0b20vcGFja2FnZXMvaW50ZW50aW9ucy9saWIvdmFsaWRhdGUuanMiLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIGJhYmVsJ1xuXG4vKiBAZmxvdyAqL1xuXG5pbXBvcnQgdHlwZSB7SW50ZW50aW9ucyRQcm92aWRlciRMaXN0LCBJbnRlbnRpb25zJFN1Z2dlc3Rpb24kTGlzdCwgSW50ZW50aW9ucyRQcm92aWRlciRIaWdobGlnaHQsIEludGVudGlvbnMkU3VnZ2VzdGlvbiRIaWdobGlnaHR9IGZyb20gJy4vdHlwZXMnXG5cbmV4cG9ydCBmdW5jdGlvbiBwcm92aWRlcihwcm92aWRlcjogSW50ZW50aW9ucyRQcm92aWRlciRMaXN0IHwgSW50ZW50aW9ucyRQcm92aWRlciRIaWdobGlnaHQpIHtcbiAgbGV0IG1lc3NhZ2VcbiAgaWYgKCFwcm92aWRlciB8fCB0eXBlb2YgcHJvdmlkZXIgIT09ICdvYmplY3QnKSB7XG4gICAgbWVzc2FnZSA9ICdJbnZhbGlkIHByb3ZpZGVyIHByb3ZpZGVkJ1xuICB9IGVsc2UgaWYgKCFBcnJheS5pc0FycmF5KHByb3ZpZGVyLmdyYW1tYXJTY29wZXMpKSB7XG4gICAgbWVzc2FnZSA9ICdJbnZhbGlkIG9yIG5vIGdyYW1tYXJTY29wZXMgZm91bmQgb24gcHJvdmlkZXInXG4gIH0gZWxzZSBpZiAodHlwZW9mIHByb3ZpZGVyLmdldEludGVudGlvbnMgIT09ICdmdW5jdGlvbicpIHtcbiAgICBtZXNzYWdlID0gJ0ludmFsaWQgb3Igbm8gZ2V0SW50ZW50aW9ucyBmb3VuZCBvbiBwcm92aWRlcidcbiAgfVxuICBpZiAobWVzc2FnZSkge1xuICAgIGNvbnNvbGUubG9nKCdbSW50ZW50aW9uc10gSW52YWxpZCBwcm92aWRlcicsIHByb3ZpZGVyKVxuICAgIHRocm93IG5ldyBFcnJvcihtZXNzYWdlKVxuICB9XG59XG5cbmV4cG9ydCBmdW5jdGlvbiBzdWdnZXN0aW9uc0xpc3Qoc3VnZ2VzdGlvbnM6IEFycmF5PEludGVudGlvbnMkU3VnZ2VzdGlvbiRMaXN0Pik6IEFycmF5PEludGVudGlvbnMkU3VnZ2VzdGlvbiRMaXN0PiB7XG4gIGlmIChBcnJheS5pc0FycmF5KHN1Z2dlc3Rpb25zKSkge1xuICAgIGNvbnN0IHN1Z2dlc3Rpb25zTGVuZ3RoID0gc3VnZ2VzdGlvbnMubGVuZ3RoXG4gICAgZm9yIChsZXQgaSA9IDA7IGkgPCBzdWdnZXN0aW9uc0xlbmd0aDsgKytpKSB7XG4gICAgICBjb25zdCBzdWdnZXN0aW9uID0gc3VnZ2VzdGlvbnNbaV1cbiAgICAgIGxldCBtZXNzYWdlXG4gICAgICBpZiAodHlwZW9mIHN1Z2dlc3Rpb24udGl0bGUgIT09ICdzdHJpbmcnKSB7XG4gICAgICAgIG1lc3NhZ2UgPSAnSW52YWxpZCBvciBubyB0aXRsZSBmb3VuZCBvbiBpbnRlbnRpb24nXG4gICAgICB9IGVsc2UgaWYgKHR5cGVvZiBzdWdnZXN0aW9uLnNlbGVjdGVkICE9PSAnZnVuY3Rpb24nKSB7XG4gICAgICAgIG1lc3NhZ2UgPSAnSW52YWxpZCBvciBubyBzZWxlY3RlZCBmb3VuZCBvbiBpbnRlbnRpb24nXG4gICAgICB9XG4gICAgICBpZiAobWVzc2FnZSkge1xuICAgICAgICBjb25zb2xlLmxvZygnW0ludGVudGlvbnNdIEludmFsaWQgc3VnZ2VzdGlvbiBvZiB0eXBlIGxpc3QnLCBzdWdnZXN0aW9uKVxuICAgICAgICB0aHJvdyBuZXcgRXJyb3IobWVzc2FnZSlcbiAgICAgIH1cbiAgICB9XG4gIH1cbiAgcmV0dXJuIHN1Z2dlc3Rpb25zXG59XG5cbmV4cG9ydCBmdW5jdGlvbiBzdWdnZXN0aW9uc1Nob3coc3VnZ2VzdGlvbnM6IEFycmF5PEludGVudGlvbnMkU3VnZ2VzdGlvbiRIaWdobGlnaHQ+KTogQXJyYXk8SW50ZW50aW9ucyRTdWdnZXN0aW9uJEhpZ2hsaWdodD4ge1xuICBpZiAoQXJyYXkuaXNBcnJheShzdWdnZXN0aW9ucykpIHtcbiAgICBjb25zdCBzdWdnZXN0aW9uc0xlbmd0aCA9IHN1Z2dlc3Rpb25zLmxlbmd0aFxuICAgIGZvciAobGV0IGkgPSAwOyBpIDwgc3VnZ2VzdGlvbnNMZW5ndGg7ICsraSkge1xuICAgICAgY29uc3Qgc3VnZ2VzdGlvbiA9IHN1Z2dlc3Rpb25zW2ldXG4gICAgICBsZXQgbWVzc2FnZVxuICAgICAgaWYgKHR5cGVvZiBzdWdnZXN0aW9uLnJhbmdlICE9PSAnb2JqZWN0JyB8fCAhc3VnZ2VzdGlvbi5yYW5nZSkge1xuICAgICAgICBtZXNzYWdlID0gJ0ludmFsaWQgb3Igbm8gcmFuZ2UgZm91bmQgb24gaW50ZW50aW9uJ1xuICAgICAgfSBlbHNlIGlmIChzdWdnZXN0aW9uLmNsYXNzICYmIHR5cGVvZiBzdWdnZXN0aW9uLmNsYXNzICE9PSAnc3RyaW5nJykge1xuICAgICAgICBtZXNzYWdlID0gJ0ludmFsaWQgY2xhc3MgZm91bmQgb24gaW50ZW50aW9uJ1xuICAgICAgfSBlbHNlIGlmICh0eXBlb2Ygc3VnZ2VzdGlvbi5jcmVhdGVkICE9PSAnZnVuY3Rpb24nKSB7XG4gICAgICAgIG1lc3NhZ2UgPSAnSW52YWxpZCBvciBubyBjcmVhdGVkIGZvdW5kIG9uIGludGVudGlvbidcbiAgICAgIH1cbiAgICAgIGlmIChtZXNzYWdlKSB7XG4gICAgICAgIGNvbnNvbGUubG9nKCdbSW50ZW50aW9uc10gSW52YWxpZCBzdWdnZXN0aW9uIG9mIHR5cGUgc2hvdycsIHN1Z2dlc3Rpb24pXG4gICAgICAgIHRocm93IG5ldyBFcnJvcihtZXNzYWdlKVxuICAgICAgfVxuICAgIH1cbiAgfVxuICByZXR1cm4gc3VnZ2VzdGlvbnNcbn1cbiJdfQ==
+//# sourceURL=/Users/stjohnson/repositories/dotfiles/atom/packages/intentions/lib/validate.js

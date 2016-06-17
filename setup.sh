@@ -1,11 +1,7 @@
 #! /bin/bash
 
-# Set up soft links from files to their destination (in home directory)
+# Because I'm the worst at shell scripting, explicitly creating links for every file
 
-# Note: /bin/bash is required for ~/.* expansion in loop below
-
-# Can't use something like 'readlink -e $0' because that doesn't work everywhere
-# And HP doesn't define $PWD in a sudo environment, so we define our own
 case $0 in
     /*|~*)
         SCRIPT_INDIRECT="`dirname $0`"
@@ -18,32 +14,13 @@ esac
 
 BASEDIR="`(cd \"$SCRIPT_INDIRECT\"; pwd -P)`"
 
-for i in $BASEDIR/*; do
-    [ ! -d $i ] && continue
+rm -rf $HOME/.atom
+rm -rf $HOME/.bashrc
+rm -rf $HOME/.screenrc
+rm -rf $HOME/.bash_profile
 
-    for j in $i/*; do
-        FILEDIR=`dirname $j`
-        FILE=`basename $j`
-        BASEFILE=$HOME/.$FILE
- 
-        if [ -f $BASEFILE -o -h $BASEFILE ]; then
-            echo "Replacing file: $BASEFILE"
-            rm $BASEFILE
-        else
-            echo "Creating link: $BASEFILE"
-        fi
+ln -s $BASEDIR/atom $HOME/.atom
+ln -s $BASEDIR/bash/bashrc $HOME/.bashrc
+ln -s $BASEDIR/bash/screenrc $HOME/.screenrc
+ln -s $BASEDIR/bash/bash_profile $HOME/.bash_profile
 
-        ln -s $j $BASEFILE
-    done
-done
-
-# Make a pass deleting stale links, if any
-for i in ~/.*; do
-    [ ! -h $i ] && continue
-
-    # We have a link: Is it stale? If so, delete it ...
-    if [ ! -f $i ]; then
-        echo "Deleting stale link: $i"
-        rm $i
-    fi
-done

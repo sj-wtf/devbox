@@ -24,3 +24,4 @@ ln -s $BASEDIR/bash/bashrc $HOME/.bashrc
 ln -s $BASEDIR/bash/screenrc $HOME/.screenrc
 ln -s $BASEDIR/bash/bash_profile $HOME/.bash_profile
 
+apm install --packages-file $BASEDIR/atom/package-list.txt

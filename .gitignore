@@ -1,0 +1,5 @@
+atom/blob-store/*
+atom/packages/*
+atom/storage/*
+atom/compile-cache/*
+atom/.apm

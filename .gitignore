@@ -1,5 +1,5 @@
-atom/blob-store/*
-atom/packages/*
-atom/storage/*
-atom/compile-cache/*
-atom/.apm
+dotfiles/atom/blob-store/*
+dotfiles/atom/packages/*
+dotfiles/atom/storage/*
+dotfiles/atom/compile-cache/*
+/dotfiles/atom/.apm

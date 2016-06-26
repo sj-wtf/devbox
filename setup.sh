@@ -24,4 +24,4 @@ ln -s $BASEDIR/dotfiles/bash/bashrc $HOME/.bashrc
 ln -s $BASEDIR/dotfiles/bash/screenrc $HOME/.screenrc
 ln -s $BASEDIR/dotfiles/bash/bash_profile $HOME/.bash_profile
 
-apm install --packages-file $BASEDIR/dotfiles/atom/package-list.txt
+sudo apm install --packages-file $BASEDIR/dotfiles/atom/package-list.txt

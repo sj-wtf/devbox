@@ -19,9 +19,9 @@ rm -rf $HOME/.bashrc
 rm -rf $HOME/.screenrc
 rm -rf $HOME/.bash_profile
 
-ln -s $BASEDIR/atom $HOME/.atom
-ln -s $BASEDIR/bash/bashrc $HOME/.bashrc
-ln -s $BASEDIR/bash/screenrc $HOME/.screenrc
-ln -s $BASEDIR/bash/bash_profile $HOME/.bash_profile
+ln -s $BASEDIR/dotfiles/atom $HOME/.atom
+ln -s $BASEDIR/dotfiles/bash/bashrc $HOME/.bashrc
+ln -s $BASEDIR/dotfiles/bash/screenrc $HOME/.screenrc
+ln -s $BASEDIR/dotfiles/bash/bash_profile $HOME/.bash_profile
 
-apm install --packages-file $BASEDIR/atom/package-list.txt
+apm install --packages-file $BASEDIR/dotfiles/atom/package-list.txt

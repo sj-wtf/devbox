@@ -3,3 +3,4 @@ dotfiles/atom/packages/*
 dotfiles/atom/storage/*
 dotfiles/atom/compile-cache/*
 /dotfiles/atom/.apm
+.DS_Store

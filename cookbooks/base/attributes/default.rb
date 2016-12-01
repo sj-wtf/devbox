@@ -1,11 +1,20 @@
 default['base']['user']['username'] = 'steve'
 default['base']['user']['password'] = 'vagrant'
 
+default['base']['default_packages'] = [
+    'epel-release',
+    'cinnamon',
+    'chefdk',
+    'open-vm-tools-desktop'
+]
+
 default['base']['apm_packages'] = [
   'language-scala',
   'linter',
   'linter-flake8',
-  'file-icons'
+  'file-icons',
+  'linter-rubocop',
+  'linter-foodcritic'
 ]
 
 default['base']['gui_packages'] = [

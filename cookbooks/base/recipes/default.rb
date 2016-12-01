@@ -5,7 +5,9 @@ yum_repository 'chef' do
   gpgkey 'https://packages.chef.io/repos/yum/stable/el/$releasever/$basearch/repodata/repomd.xml.key'
 end
 
-package 'epel-release'
+node['base']['default_packages'].each do |package_name|
+    package package_name
+end
 
 bash 'install atom' do
   code <<-EOH
@@ -15,12 +17,8 @@ bash 'install atom' do
   not_if { ::File.exists?('/bin/atom') }
 end
 
-package 'cinnamon'
-
-package 'chefdk'
-
 user 'steve' do
-  password node['base']['password']
+  password '$1$3vQrHajO$/VxkV9QQEMR2Jdwj0BbZi0' # plaintext: vagrant
   home '/home/steve'
   shell '/bin/bash'
 end
@@ -29,6 +27,17 @@ directory '/home/steve' do
   owner 'steve'
   group 'steve'
   mode 0700
+end
+
+template '/home/steve/.bashrc' do
+  source 'bashrc.erb'
+  owner 'steve'
+  group 'steve'
+  mode 0644
+end
+
+execute 'Add steve to root group' do
+  command 'sudo usermod --groups wheel steve' # because I'm a piece of shit
 end
 
 node['base']['apm_packages'].each do |package|
@@ -47,11 +56,4 @@ end
 link '/etc/systemd/system/default.target' do
   to '/lib/systemd/system/graphical.target'
   link_type :symbolic
-end
-
-template '/home/steve/.bashrc' do
-  source 'bashrc.erb'
-  owner 'steve'
-  group 'steve'
-  mode 0644
 end

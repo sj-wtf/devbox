@@ -1,0 +1,9 @@
+alias ls='ls --color'
+alias ll='ls -lah --color'
+alias untar='tar -xvf'
+
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
+eval "$(chef shell-init bash)"

@@ -1,4 +1,4 @@
-name             'base'
+name             'devbox'
 maintainer       'Steve Johnson'
 maintainer_email 'steve [at] johnson [doot] pizza'
 description      'An environment to dev in'

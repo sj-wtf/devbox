@@ -10,8 +10,12 @@ node['devbox']['chef']['repos'].each do |repo|
   end
 end
 
-node['devbox']['chef']['packages'].each do |package_name|
-    package package_name
+node['devbox']['chef']['packages'].each do |package|
+  package.each do |name, version|
+    package name do
+      version version
+    end
+  end
 end
 
 if node['devbox']['gui']
@@ -20,7 +24,7 @@ if node['devbox']['gui']
       command "apm install #{package}"
       user 'vagrant'
       cwd '/home/vagrant'
-      environment ({'HOME' => '/home/vagrant', 'USER' => 'vagrant'})
+      environment ({ 'HOME' => '/home/vagrant', 'USER' => 'vagrant' })
     end
   end
 end

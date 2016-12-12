@@ -7,8 +7,10 @@ default['devbox']['chef']['repos'] = [
   }
 ]
 
+default['devbox']['chef']['chefdk_version'] = '1.0.3'
+
 default['devbox']['chef']['packages'] = [
-  'chefdk'
+  'chefdk' => node['devbox']['chef']['chefdk_version']
 ]
 
 default['devbox']['chef']['apm_packages'] = [

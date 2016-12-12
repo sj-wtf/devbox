@@ -1,12 +1,13 @@
 gui = true
+chefdk_version = '0.3.6'
 
 Vagrant.configure('2') do |config|
   config.vm.box = 'bento/centos-7.2'
   config.vm.hostname = 'devbox'
   config.vm.synced_folder '.', '/vagrant', disabled: true
-  config.vm.synced_folder '..',  '/home/vagrant/repos'
+  config.vm.synced_folder '..','/home/vagrant/repos'
   config.ssh.forward_agent = true
-  
+
   config.vm.provider 'virtualbox' do |vb|
     vb.gui = gui
     vb.memory = 8192
@@ -26,7 +27,10 @@ Vagrant.configure('2') do |config|
     chef.nodes_path = 'nodes'
     chef.json = {
       'devbox' => {
-        'gui' => gui
+        'gui' => gui,
+        'chef' => {
+          'chefdk_version' => chefdk_version
+        }
       }
     }
   end

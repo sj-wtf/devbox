@@ -1,8 +1,8 @@
 Builds a development machine. Unstable.
 
-You can't currently run virtualbox on devbox, since virtualbox doesn't support PV on PV.
+You can't currently run virtualbox on devbox, since virtualbox doesn't support PV on PV.  Need to add support for another provider, which supports nested virtualization.
 
-Currently only supports Atom. For now, you have to do a `vagrant reload` to get a GUI, and to upgrade the kernel's development headers. There are several problems right now:
+Currently only supports Atom. For now, you have to do a `vagrant reload` to get a GUI. There are several other problems, as well:
 
 - [ ] I have to include a resource for package installation, apm package installation, and repo creation in each recipe. It'd be good if the base recipe installed everything in a single go based on node attributes.
 

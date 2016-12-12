@@ -9,5 +9,8 @@ default['devbox']['scala']['download_url'] = "http://downloads.lightbend.com/sca
 default['devbox']['scala']['apm_packages'] = [
   'linter-scalac',
   'language-scala',
-  'ensime'
+  'ensime',
+  'hyperclick',
+  'browser-plus',
+  'intentions'
 ]

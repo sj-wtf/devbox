@@ -1,4 +1,8 @@
-Builds a development machine. For now, you have to do a vagrant reload to get a GUI. There are several problems right now:
+Builds a development machine. Unstable.
+
+You can't currently run virtualbox on devbox, since virtualbox doesn't support PV on PV.
+
+Currently only supports Atom. For now, you have to do a `vagrant reload` to get a GUI, and to upgrade the kernel's development headers. There are several problems right now:
 
 - [ ] I have to include a resource for package installation, apm package installation, and repo creation in each recipe. It'd be good if the base recipe installed everything in a single go based on node attributes.
 
@@ -10,6 +14,6 @@ Builds a development machine. For now, you have to do a vagrant reload to get a 
 
 - [ ] All recipes depend on the base cookbook. Maybe run it on every recipe? How would I dedupe its work if I want to run more than one recipe?
 
-- [ ] Maybe only install virtualenv for each version of python we install?
+- [x] ~~Maybe only install virtualenv for each version of python we install?~~ No, I want some standard packages available in the Python repl.
 
 - [ ] No tests. It'd be good if I wrote some tests.

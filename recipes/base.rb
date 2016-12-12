@@ -14,6 +14,15 @@ node['devbox']['base']['packages'].each do |package_name|
     package package_name
 end
 
+remote_file '/tmp/vagrant.rpm' do
+  source node['devbox']['base']['vagrant_url']
+  not_if { ::File.exists?('/usr/bin/vagrant') }
+end
+
+yum_package 'vagrant' do
+  source '/tmp/vagrant.rpm'
+end
+
 if node['devbox']['gui']
   bash 'install atom' do
     code <<-EOH

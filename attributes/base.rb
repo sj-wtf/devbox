@@ -6,16 +6,35 @@ default['devbox']['base']['repos'] = [
     'enabled' => true,
     'gpgcheck' => true,
     'gpgkey' => 'https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-$releasever'
+  },
+  'virtualbox' => {
+    'name' => 'CentOS $releasever ($basearch) VirtualBox',
+    'baseurl' => 'http://download.virtualbox.org/virtualbox/rpm/rhel/$releasever/$basearch',
+    'enabled' => true,
+    'gpgcheck' => true,
+    'gpgkey' => 'https://www.virtualbox.org/download/oracle_vbox.asc'
   }
 ]
 
+default['devbox']['base']['vagrant_version'] = '1.9.1'
+
+default['devbox']['base']['vagrant_url'] = "https://releases.hashicorp.com/vagrant/#{node['devbox']['base']['vagrant_version']}/vagrant_#{node['devbox']['base']['vagrant_version']}_#{node['kernel']['processor']}.rpm"
+
 default['devbox']['base']['packages'] = [
     'open-vm-tools-desktop',
+    'VirtualBox-5.1',
     'bind-utils',
     'jq',
     'curl',
     'wget',
-    'unzip'
+    'unzip',
+    'gcc',
+    'make',
+    'qemu',
+    'libvirt',
+    'libvirt-devel',
+    'ruby-devel',
+    'qemu-kvm'
 ]
 
 default['devbox']['base']['apm_packages'] = [

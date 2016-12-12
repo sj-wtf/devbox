@@ -1,0 +1,8 @@
+AllCops:
+  Exclude:
+    - '/attributes'
+  TargetRubyVersion: 2.3
+
+Style/Encoding:
+  EnforcedStyle: when_needed
+  Enabled: true

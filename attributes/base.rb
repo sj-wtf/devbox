@@ -21,20 +21,19 @@ default['devbox']['base']['vagrant_version'] = '1.9.1'
 default['devbox']['base']['vagrant_url'] = "https://releases.hashicorp.com/vagrant/#{node['devbox']['base']['vagrant_version']}/vagrant_#{node['devbox']['base']['vagrant_version']}_#{node['kernel']['processor']}.rpm"
 
 default['devbox']['base']['packages'] = [
-    'open-vm-tools-desktop',
-    'VirtualBox-5.1',
-    'bind-utils',
-    'jq',
-    'curl',
-    'wget',
-    'unzip',
-    'gcc',
-    'make',
-    'qemu',
-    'libvirt',
-    'libvirt-devel',
-    'ruby-devel',
-    'qemu-kvm'
+  'open-vm-tools-desktop',
+  'VirtualBox-5.1',
+  'bind-utils',
+  'jq',
+  'curl',
+  'wget',
+  'unzip',
+  'gcc',
+  'make',
+  'libvirt',
+  'libvirt-devel',
+  'ruby-devel',
+  'qemu-kvm'
 ]
 
 default['devbox']['base']['apm_packages'] = [
@@ -52,7 +51,6 @@ default['devbox']['base']['gui_packages'] = [
   'glx-utils',
   'liberation-mono-fonts',
   'mesa-dri-drivers',
-  'nautilus-open-terminal',
   'plymouth-system-theme',
   'spice-vdagent',
   'tigervnc-server',

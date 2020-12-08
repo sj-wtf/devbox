@@ -17,3 +17,5 @@ Currently only supports Atom. For now, you have to do a `vagrant reload` to get 
 - [x] ~~Maybe only install virtualenv for each version of python we install?~~ No, I want some standard packages available in the Python repl.
 
 - [ ] No tests. It'd be good if I wrote some tests.
+
+- [ ] Add zsh and p10k support to reflect my current config
